@@ -7,13 +7,13 @@ const listingSchema = new Schema({
         required : true,
     },
     description : String,
-    image : {
-        type : String,
-        default : "https://images.unsplash.com/photo-1721742149306-879cf7498eb7?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        set: (v) => 
-        v === "" 
-        ? "https://images.unsplash.com/photo-1721742149306-879cf7498eb7?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-        : v,
+    image: {
+        filename: String,
+        url: {
+            type: String,
+            default: "https://images.pexels.com/photos/17644421/pexels-photo-17644421/free-photo-of-seagulls-flying-on-sea-shore.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            set: (v) => v === "" ? "https://images.pexels.com/photos/17644421/pexels-photo-17644421/free-photo-of-seagulls-flying-on-sea-shore.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" : v,
+        }
     },
     price : Number,
     location : String,
